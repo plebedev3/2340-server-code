@@ -1,0 +1,31 @@
+group '2340-gimme-a-br'
+version '1.0-SNAPSHOT'
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.10.RELEASE")
+    }
+}
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    baseName = '2340-rest-service'
+    version =  '0.1.0'
+}
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
